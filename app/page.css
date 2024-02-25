@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  @apply m-0 p-0;
+}
+
+.page {
+  @apply flex flex-col h-screen w-screen;
+}
+
+.header {
+  @apply bg-[#040f1a] flex-1;
+}
+
+.main {
+  @apply bg-[#100f0f] text-[#bcc5d1] flex flex-row flex-[4];
+}
+
+.sidebar {
+  @apply flex-[0.5] pl-[1%];
+}
+
+.title {
+  @apply py-[20%] px-[5%] space-x-[1em] text-[0.8rem];
+}
+.info {
+  @apply font-poppins pt-[15%] px-[15%] pb-[0%];
+}
+.listitem {
+  @apply list-none text-[#bcc5d1] list-outside;
+}
+.listitem:before {
+  @apply content-['>'] relative left-[-15px];
+}
+.profile {
+  @apply flex-[2] border-l-4 border-solid border-[#252527] py-[4%] px-[2%] overflow-hidden;
+}
+
+.heading {
+  @apply font-normal text-white font-poppins;
+}
+.form {
+  @apply flex-1 w-4/5 p-[1%];
+}
+.input {
+  @apply border-[1px] border-solid border-[#222222] font-dmSans text-[#b0b0b0] bg-[#27272d] rounded-[5px] h-[2.5rem] w-[75%] text-[1.2rem] px-[2.5%] py-[1.1%] box-content;
+}
+::placeholder {
+  @apply text-[#b0b0b0] opacity-50;
+}
+.label {
+  @apply text-[0.7rem] text-[#727272] absolute top-0 left-0 p-[0.5%] pointer-events-none;
+}
+.button {
+  @apply m-[10px] bg-[#0c7bc9] text-white py-[0.8em] px-[3em] border-none rounded-[3px];
+}
+.input-container {
+  @apply relative m-[20px];
+}
+
+.terminal {
+  @apply flex-[1.5] bg-[#040f1a] font-poppins text-[#bbc5d1] py-[0.1%] px-[2%] [word-spacing:1em];
+}
+
+.underline-offset {
+  @apply underline underline-offset-[6px] text-white font-poppins;
+}
+.left-dots {
+  @apply relative left-0 top-[40%];
+}
+.right-dots {
+  @apply absolute right-0 bottom-[70%];
+}
+
+/* phones */
+@media screen and (max-width: 600px) {
+  .main {
+    @apply m-0 flex-[6] flex-col;
+  }
+  .info {
+    @apply pt-[5%];
+  }
+  .input {
+    @apply text-[1rem] w-[100%];
+  }
+
+  .header {
+    @apply flex-[0.5];
+  }
+  .profile {
+    @apply flex flex-col pl-0 items-center border-l-0 pr-0;
+  }
+  .title {
+    @apply hidden;
+  }
+  .form,
+  .button {
+    @apply text-center mr-3;
+  }
+  .terminal {
+    @apply text-center text-[0.68em] space-x-[0.7em];
+  }
+  .left-dots {
+    @apply absolute top-[65%];
+  }
+  .right-dots {
+    @apply top-[10%];
+  }
+}
+
+/* tablets */
+@media only screen and (min-width: 765px) and (max-width: 1024px) {
+  .sidebar {
+    @apply flex-1;
+  }
+  .terminal {
+    @apply flex-1;
+  }
+  .header {
+    @apply flex-[0.5];
+  }
+}
