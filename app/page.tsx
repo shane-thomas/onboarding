@@ -1,64 +1,57 @@
-
+"use client";
 import React from "react";
 import "./page.css";
-import Image from "next/image";
 import dots from "./assets/Dots.png";
+import Image from "next/image";
 
-const UserInfoField = ({
-  label,
-  placeholder,
-}: {
-  label: string;
-  placeholder: string;
-}) => (
-  <div className="input-container">
-    <label className="label" htmlFor={label}>{label}</label>
-    <input className="input" type="text" id={label} placeholder={placeholder} />
-  </div>
-);
-
-export default function Home() {
+// import "../tailwind.css";
+export default function page() {
   return (
-    <div className="page">
-      <header className="header"></header>
-      <main className="main">
-        <section className="sidebar">
-          <span className="title">
-            <span className="underline-offset">USER</span> WORKSPACE
+    <>
+      <div className="flex flex-col h-screen w-screen" id="page">
+        <header className="bg-[#040f1a] flex-1" id="header" />
+        <main
+          className="bg-[#100f0f] text-[#bcc5d1] flex flex-row flex-[4]"
+          id="main"
+        >
+          <section className="flex-[0.5] pl-[1%]" id="sidebar">
+            <Image
+              className="relative left-0 top-[40%]"
+              src={dots}
+              alt="left dots"
+              id="left-dots"
+            />
+          </section>
+          <span className="inline-block align-middle text-center relative font-poppins text-white text-xl">
+            Oops :/
+            <br />
+            Open on desktop
           </span>
-          <div className="info">
-            <ul>
-              User-Information
-              <li className="listitem">Name</li>
-              <li className="listitem">Registration Number</li>
-              <li className="listitem">Mail ID</li>
-              <li className="listitem">Phone Number</li>
-            </ul>
-          </div>
-          <Image className="left-dots" src={dots} alt="left dots"></Image>
-        </section>
-        <section className="profile">
-          <h1 className="heading">Profile</h1>
-          <form className="form">
-            <UserInfoField label="Name" placeholder="Srija Puvvada" />
-            <UserInfoField
-              label="Registration Number"
-              placeholder="22BCE0000"
-            />
-            <UserInfoField
-              label="Email ID"
-              placeholder="Srija.Puvvada@vitstudent.ac.in"
-            />
-            <UserInfoField label="Phone no." placeholder="9090909090" />
-            <button className="button" type="submit">Submit</button>
-          </form>
-          <Image className="right-dots" src={dots} alt="right dots"></Image>
-        </section>
-      </main>
-      <aside className="terminal">
-        PROBLEMS <span className="underline-offset">OUTPUT</span> DEBUG CONSOLE
-        TERMINAL COMMENTS
-      </aside>
-    </div>
+          <section
+            className="border-l-4 border-solid border-[#252527] py-[4%] px-[2%] overflow-hidden"
+            id="profile"
+          ></section>
+          <Image
+            className="absolute right-0 bottom-[70%]"
+            src={dots}
+            alt="right dots"
+            id="right-dots"
+          />
+        </main>
+        <aside
+          className="flex-[1.5] bg-[#040f1a] font-poppins text-[#bbc5d1] py-[0.1%] px-[2%] [word-spacing:1em]"
+          id="terminal"
+        >
+          PROBLEMS{" "}
+          <span
+            className="underline underline-offset-[6px] text-white font-poppins"
+            id="underline-offset"
+          >
+            OUTPUT
+          </span>{" "}
+          DEBUG CONSOLE TERMINAL
+        </aside>
+      </div>
+    </>
   );
 }
